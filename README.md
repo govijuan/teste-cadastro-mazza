@@ -1,4 +1,31 @@
-# DesafioMazza1
+# Desafio de cadastro
+
+## Descrição
+
+Desenvolvi a partir do Angular 6 (versão 6.0.2) e importei um módulo do Bootstrap (usando npm) para tratar com o layout.
+Criei um componente para o formulário e no mesmo coloquei a lista. É um formulário reactivo e coloquei nele uma validação muito simples para 'require' de cada um dos campos. Troca de tela no submit e no botão para ver a lista de cadastros. no submit envio as informaçõe para o array de objetos que já existe a partir do chamato http o qual popula o array com as informações base de lista de cadastros.
+
+criei também função para eliminar cadastros do array de lista de cadastros.
+
+
+Obrigado
+
+## Instruções
+
+Clone ou baixe o arquivo .zip do repositório e coloque em algum local acessível de sua máquina. Sua meaquina deve posuir linha de comando bash ou equivalente, e ter instalado Node com pacote npm atualizado.
+
+* Para instalar dependências digite o comando  "npm install" no seu terminal de comando
+* Para fazer o build digite o comando "ng build" no seu terminal.
+* Para inicializar o servidor e visualizar no navegador digite o comando "ng serve --open" (abrirá automáticamente numa janela de seu navegador padrão).
+
+
+
+Obrigado e fico a disposição
+
+Juan Carlos Coral
+
+
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.3.
 
