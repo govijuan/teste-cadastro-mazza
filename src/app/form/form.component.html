@@ -1,0 +1,59 @@
+<div class="form-wrap" [hidden]="submitted">
+  <form [formGroup]="cadastroForm" (ngSubmit)="onSubmit()" novalidate >
+    <div class="form-group">
+      <label for="name">Nome Completo</label>
+      <input class="form-control" type="text" formControlName="name">
+      <div *ngIf="!cadastroForm.controls.name.valid && cadastroForm.controls['name'].touched" class="alert alert-danger">
+        'Nome completo' é um campo obrigatório
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="cpf">Seu CPF</label>
+      <input type="number" class="form-control" id="cpf" formControlName="cpf">
+      <div *ngIf="!cadastroForm.controls.cpf.valid && cadastroForm.controls['cpf'].touched" class="alert alert-danger">
+        'Seu cpf' é um campo obrigatório
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="phone">Seu Telefone</label>
+      <input type="number" class="form-control" id="phone" formControlName="phone">
+      <div  *ngIf="!cadastroForm.controls.phone.valid && cadastroForm.controls['phone'].touched" class="alert alert-danger">
+        'Seu Telefone' é um campo obrigatório
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email">Seu Email</label>
+      <input class="form-control" id="email" formControlName="email">
+      <div *ngIf="!cadastroForm.controls.email.valid && cadastroForm.controls['email'].touched"  class="alert alert-danger">
+        'Seu Email' é um campo obrigatório
+      </div>
+    </div>
+    <button type="submit" class="btn btn-success" [disabled]="!cadastroForm.valid">Cadastrar</button>
+  </form>
+  <div>
+    <br>
+    <button class="btn btn-primary" (click)="verListaCadastros()">Ver lista completa de cadastros</button>
+  </div>
+</div>
+<div class="cadastros-list-wrap" [hidden]="!submitted">
+  <h4 class="text-center">Cadastros existentes</h4>
+  <table class="table table-striped table-hover cadastros-table">
+    <thead>
+      <tr>
+        <th>Nome Completo</th>
+        <th>CPF</th>
+        <th>Telefone</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let cadastro of listaCadastros">
+      <tr>
+        <td>{{cadastro.name}}</td>
+        <td>{{cadastro.cpf}}</td>
+        <td>{{cadastro.phone}}</td>
+        <td>{{cadastro.email}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <button class="btn btn-primary" (click)="voltaParaNovoCadastro()">Fazer novo cadastro</button>
+</div>
