@@ -1,4 +1,5 @@
 <div class="form-wrap" [hidden]="submitted">
+  <div class="form-subtitle"><h4 class="text-center">Crie um novo cadastro</h4></div>
   <form [formGroup]="cadastroForm" (ngSubmit)="onSubmit()" novalidate >
     <div class="form-group">
       <label for="name">Nome Completo</label>
@@ -52,6 +53,7 @@
         <td>{{cadastro.cpf}}</td>
         <td>{{cadastro.phone}}</td>
         <td>{{cadastro.email}}</td>
+        <td><button class="btn btn-danger" (click)="apagarCadastro(cadastro.name)">Apagar <i class="glyphicon glyphicon-remove"></i></button></td>
       </tr>
     </tbody>
   </table>

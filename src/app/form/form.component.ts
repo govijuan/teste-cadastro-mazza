@@ -30,6 +30,15 @@ export class FormComponent implements OnInit {
     this.cadastroForm.reset();
   }   
 
+  apagarCadastro (name) {
+    console.log(name);
+
+    for(var i = 0; i < this.listaCadastros.length; i++){
+      if(this.listaCadastros[i]['name'] == name){
+        this.listaCadastros.splice(i, 1);
+      }
+    }
+  }
 
   voltaParaNovoCadastro() {
     this.cadastroForm.value.name = "";
